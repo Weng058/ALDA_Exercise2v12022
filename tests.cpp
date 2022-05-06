@@ -89,50 +89,34 @@ TEST_CASE("Test8", "[Palindrom]")
 // tests for exercise 3
 // ---------------------
 
-TEST_CASE("Test9", "[isPrime]")
+TEST_CASE("Test9", "[bisection]")
 {
-    int expected = 0;
-    int actual = isPrime(0);
-    INFO("Testing if 0 is a prime number");
-    REQUIRE(expected == actual);
+    float expected = 2.0;
+    float actual = bisection(0,2, EPSILON);
+    INFO("Testing for root in the interval 0..2 for f(x) = x^2 - 4");
+    REQUIRE(fabs(expected - actual) <= EPSILON);
 }
 
-TEST_CASE("Test10", "[isPrime]")
+TEST_CASE("Test10", "[bisection]")
 {
-    int expected = 0;
-    int actual = isPrime(1);
-    INFO("Testing if 1 is a prime number");
-    REQUIRE(expected == actual);
+    float expected = -2.0;
+    float actual = bisection(-3,-1, EPSILON);
+    INFO("Testing for root in the interval -3..-1 for f(x) = x^2 - 4");
+    REQUIRE(fabs(expected - actual) <= EPSILON);
 }
 
-TEST_CASE("Test11", "[isPrime]")
+TEST_CASE("Test11", "[bisection]")
 {
-    int expected = 1;
-    int actual = isPrime(2);
-    INFO("Testing if 2 is a prime number");
-    REQUIRE(expected == actual);
+    float expected = -2.0;
+    float actual = bisection(-5,-1, EPSILON);
+    INFO("Testing for root in the interval -5..-1 for f(x) = x^2 - 4");
+    REQUIRE(fabs(expected - actual) <= EPSILON);
 }
 
-TEST_CASE("Test12", "[isPrime]")
+TEST_CASE("Test12", "[bisection]")
 {
-    int expected = 1;
-    int actual = isPrime(71);
-    INFO("Testing if 71 is a prime number");
-    REQUIRE(expected == actual);
-}
-
-TEST_CASE("Test13", "[isPrime]")
-{
-    int expected = 0;
-    int actual = isPrime(85);
-    INFO("Testing if 85 is a prime number");
-    REQUIRE(expected == actual);
-}
-
-TEST_CASE("Test14", "[isPrime]")
-{
-    int expected = 1;
-    int actual = isPrime(509);
-    INFO("Testing if 509 is a prime number");
-    REQUIRE(expected == actual);
+    float expected = -2.0;
+    float actual = bisection(-5.5,-1, EPSILON);
+    INFO("Testing for root in the interval -5.5..-1 for f(x) = x^2 - 4");
+    REQUIRE(fabs(expected - actual) <= EPSILON);
 }

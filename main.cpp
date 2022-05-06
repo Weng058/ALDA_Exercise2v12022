@@ -37,8 +37,10 @@ int main(int argc, char* const argv[] ){
     // =====================
     // Exercise 3
     // ---------------------
-    // call isPrime with a positive, natural number
-    // print the result of the method call
+    // call bisection and pass some proper interval to test its
+    // behavior
+    // for epsilon you may use the definition EPSILON that can
+    // be found in recursion.hpp
     
 
     
