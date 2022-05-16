@@ -12,13 +12,32 @@
 // Exercise 1 - Harmonische Reihe
 // ---------------------
 float h(int n){
-    return 0;
+   if (n == 0) {
+        return -1.00;
+    }// (n == 1 || n ==2)??
+    else if (n == 1) {
+        return 1.00;
+    }
+    else {
+        return 1.00 / n + (h(n - 1));
+    }//return 0;
 }
 
 // =====================
 // Exercise 2 - Palindrom Checker
 // ---------------------
 int isPalindrom(char *text, int left, int right){
+    // https://www.growingwiththeweb.com/2014/02/determine-if-a-string-is-a-palindrome.html
+    // https://www.geeksforgeeks.org/recursive-function-check-string-palindrome/ 
+    if (left >= right) {
+          return true;
+     }
+     if (text[left] != text[right]) {
+          return false;
+     }
+     else {
+          return isPalindrom(text, left + 1, right - 1);
+     }
     return -1;
 }
 
@@ -35,6 +54,22 @@ float f(float x){
 }
 
 float bisection(float x0, float x1, float epsilon){
+    float fx0 = f(x0), fx1 = f(x1), xneu;
+    while (true) {
+        xenu = (x0 + x1) / 2;
+        if (x0 == xneu || x1 == xneu)
+            break;
+        float fxneu = f(xneu);
+        if (fx0 * fxneu < 0.0) {
+            x1 == xneu;
+            fx1 = fxneu;
+        }
+        else {
+            x0 = xneu;
+            fx0 = fxneu;
+
+        }return xneu;
+    
     return 0.0;
 }
     
